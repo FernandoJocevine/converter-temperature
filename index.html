@@ -9,7 +9,14 @@
 <body>
     <h1>Create a Temperature Converter</h1>
     <label for="inputFahrenheit">Fahrenheit:</label>
-    <input type="number" name="" id="inputFahrenheit" placeholder="input fahrenheit">
+    <input type="number" name="" id="inputFahrenheit" placeholder="input fahrenheit" oninput="temperatureConverter(this.value)">
     <p>Celcius: <span id="outputCelcius"></span></p>
+
+    <script>
+        function temperatureConverter(valueFahrenheit){
+            valueFahrenheit = parseFloat(valueFahrenheit);
+            document.getElementById("outputCelcius").innerHTML=(valueFahrenheit-32)/1.8;
+        }
+    </script>
 </body>
 </html>
