@@ -7,7 +7,7 @@
     <title>Temperature Converter</title>
 </head>
 <body>
-    <h1>Create a Temperature Converter</h1>
+    <h1>Fahrenheit Converter</h1>
     <label for="inputFahrenheit">Fahrenheit:</label>
     <input type="number" name="" id="inputFahrenheit" placeholder="input fahrenheit" oninput="temperatureConverter(this.value)">
     <p>Celcius: <span id="outputCelcius"></span></p>
@@ -18,6 +18,12 @@
     <input type="number" name="" id="inputCelcius" placeholder="input celcius" oninput="temperatureConverterCelcius(this.value)">
     <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
     <p>Kelvin: <span id="outputKelvinCC"></span></p>
+
+    <h1>Kelvin Converter</h1>
+    <label for="inputKelvin">Kelvin:</label>
+    <input type="number" name="" id="inputKelvin" placeholder="input kelvin" oninput="temperatureConverterKelvin(this.value)">
+    <p>Fahrenheit: <span id="outputFahrenheitK"></span></p>
+    <p>Celcius: <span id="outputCelciusK"></span></p>
 
     <script>
         function temperatureConverter(valueFahrenheit){
@@ -34,6 +40,14 @@
 
             valueCelcius = parseFloat(valueCelcius);
             document.getElementById("outputKelvinCC").innerHTML=valueCelcius+273.15;
+        }
+
+        function temperatureConverterKelvin(valueKelvin){
+            valueKelvin = parseFloat(valueKelvin);
+            document.getElementById("outputFahrenheitK").innerHTML=((valueKelvin-273.15)*1.8)+32;
+
+            valueKelvin = parseFloat(valueKelvin);
+            document.getElementById("outputCelciusK").innerHTML=valueKelvin-273.15;
         }
     </script>
 </body>
