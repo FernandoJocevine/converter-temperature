@@ -11,11 +11,15 @@
     <label for="inputFahrenheit">Fahrenheit:</label>
     <input type="number" name="" id="inputFahrenheit" placeholder="input fahrenheit" oninput="temperatureConverter(this.value)">
     <p>Celcius: <span id="outputCelcius"></span></p>
+    <p>Kelvin: <span id="outputKelvin"></span></p>
 
     <script>
         function temperatureConverter(valueFahrenheit){
             valueFahrenheit = parseFloat(valueFahrenheit);
             document.getElementById("outputCelcius").innerHTML=(valueFahrenheit-32)/1.8;
+
+            valueFahrenheit = parseFloat(valueFahrenheit);
+            document.getElementById("outputKelvin").innerHTML=((valueFahrenheit-32)/1.8)+273.15;
         }
     </script>
 </body>
